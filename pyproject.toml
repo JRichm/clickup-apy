@@ -9,3 +9,7 @@ authors=[
     { name = "James Richmond" }
 ]
 dependencies=["requests"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+clickup-apy = { git = "https://github.com/JRichm/clickup-apy.git" }
