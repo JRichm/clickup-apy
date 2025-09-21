@@ -33,6 +33,25 @@ class ClickUpAPI:
         )
 
         return response
+    
+
+    @handle_response
+    def post(self, endpoint: str = None, data: dict = None, json_data: dict = None):
+        if not endpoint:
+            return None
+        
+        kwargs = {"headers": self.headers}
+        if json_data:
+            kwargs["json"] = json_data
+        elif data:
+            kwargs["data"] = data
+        
+        response = requests.post(
+            url=f"{self.base_url}/{endpoint.lstrip('/')}", 
+            **kwargs
+        )
+        
+        return response
 
     @handle_response
     def put(self, endpoint: str = None, data: dict = None, json_data: dict = None):
@@ -52,6 +71,7 @@ class ClickUpAPI:
 
         return response
 
+
     @handle_response
     def delete(self, endpoint: str = None):
         if not endpoint:
@@ -63,5 +83,3 @@ class ClickUpAPI:
         )
 
         return response
-
-    
