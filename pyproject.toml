@@ -6,6 +6,6 @@ name="clickup-apy"
 version="0.1.0"
 description="Python ClickUp API Wrapper"
 authors=[
-    { name: "James Richmond" }
+    { name = "James Richmond" }
 ]
 dependencies=["requests"]
